@@ -1,12 +1,17 @@
-name: Deploy VitePress site to GitHub Pages
+name: Deploy VitePress to GitHub Pages
 
 on:
   push:
     branches:
-      - main # 如果你用的是其他分支名，记得改
+      - main
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -20,11 +25,21 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build VitePress site
+      - name: Build VitePress
         run: npm run docs:build
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: docs/.vitepress/dist
+          path: docs/.vitepress/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v2
