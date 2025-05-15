@@ -3,6 +3,7 @@ import routes from '../../routes.json'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "Nest通关秘籍",
+  base: '/nest-docs/',
   ignoreDeadLinks: true,
   markdown: {
     image: {

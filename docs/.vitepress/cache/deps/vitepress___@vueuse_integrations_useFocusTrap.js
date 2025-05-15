@@ -1,14 +1,15 @@
 import {
   notNullish,
-  toValue,
+  toArray,
   tryOnScopeDispose,
   unrefElement
-} from "./chunk-YJ6QP2VR.js";
+} from "./chunk-LOIFVOWP.js";
 import {
   computed,
-  ref,
+  shallowRef,
+  toValue,
   watch
-} from "./chunk-LW4I4DCF.js";
+} from "./chunk-TGLERUJR.js";
 
 // node_modules/tabbable/dist/index.esm.js
 var candidateSelectors = ["input:not([inert])", "select:not([inert])", "textarea:not([inert])", "a[href]:not([inert])", "button:not([inert])", "[tabindex]:not(slot):not([inert])", "audio[controls]:not([inert])", "video[controls]:not([inert])", '[contenteditable]:not([contenteditable="false"]):not([inert])', "details>summary:first-of-type:not([inert])", "details:not([inert])"];
@@ -1068,8 +1069,8 @@ var createFocusTrap = function createFocusTrap2(elements, userOptions) {
 function useFocusTrap(target, options = {}) {
   let trap;
   const { immediate, ...focusTrapOptions } = options;
-  const hasFocus = ref(false);
-  const isPaused = ref(false);
+  const hasFocus = shallowRef(false);
+  const isPaused = shallowRef(false);
   const activate = (opts) => trap && trap.activate(opts);
   const deactivate = (opts) => trap && trap.deactivate(opts);
   const pause = () => {
@@ -1086,7 +1087,7 @@ function useFocusTrap(target, options = {}) {
   };
   const targets = computed(() => {
     const _targets = toValue(target);
-    return (Array.isArray(_targets) ? _targets : [_targets]).map((el) => {
+    return toArray(_targets).map((el) => {
       const _el = toValue(el);
       return typeof _el === "string" ? _el : unrefElement(_el);
     }).filter(notNullish);
