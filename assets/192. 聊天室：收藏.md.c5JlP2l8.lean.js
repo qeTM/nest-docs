@@ -1,1 +1,0 @@
-import{_ as i,c as a,o as n,ag as h}from"./chunks/framework.BDwTZuFy.js";const g=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"192. 聊天室：收藏.md","filePath":"192. 聊天室：收藏.md"}'),k={name:"192. 聊天室：收藏.md"};function p(l,s,t,e,E,r){return n(),a("div",null,s[0]||(s[0]=[h("",67)]))}const y=i(k,[["render",p]]);export{g as __pageData,y as default};

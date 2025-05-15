@@ -1,0 +1,1 @@
+import{_ as i,c as a,o as n,ag as p}from"./chunks/framework.CCM1LoTM.js";const r=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"9. 全局模块和生命周期.md","filePath":"9. 全局模块和生命周期.md"}'),l={name:"9. 全局模块和生命周期.md"};function e(t,s,h,o,c,g){return n(),a("div",null,s[0]||(s[0]=[p("",98)]))}const d=i(l,[["render",e]]);export{r as __pageData,d as default};

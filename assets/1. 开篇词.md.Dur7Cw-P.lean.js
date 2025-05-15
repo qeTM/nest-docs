@@ -1,0 +1,1 @@
+import{_ as o,c as t,o as s,ag as r}from"./chunks/framework.CCM1LoTM.js";const l=JSON.parse('{"title":"1. 开篇词","description":"","frontmatter":{},"headers":[],"relativePath":"1. 开篇词.md","filePath":"1. 开篇词.md"}'),p={name:"1. 开篇词.md"};function a(n,e,c,i,d,m){return s(),t("div",null,e[0]||(e[0]=[r("",15)]))}const g=o(p,[["render",a]]);export{l as __pageData,g as default};
