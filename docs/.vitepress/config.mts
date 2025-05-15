@@ -2,6 +2,7 @@ import { defineConfig } from 'vitepress'
 import routes from '../../routes.json'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  base: '/nest-docs/',
   title: "Nest通关秘籍",
   ignoreDeadLinks: true,
   markdown: {
